@@ -2,7 +2,7 @@
 
 Bash, but for the British.
 
-##Features
+**Features*
 
 - Fully featured language, very similar to the already familiar bash.
 
@@ -10,6 +10,6 @@ Bash, but for the British.
 
 - Enforces the British values of politeness, gratitude, and passive-aggressive error messages.
 
-##Dependencies
+**Dependencies**
 
 - Currently some dependencies on bash, but 51.8% of the development team believe that the BritSH project would be more strong and stable if we take back control, and cut all ties with bash. We're 100% sure the changeover will have no notable effect, and will reap great rewards in the next fifty to seventy years.
