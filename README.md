@@ -2,7 +2,7 @@
 
 Bash, but for the British.
 
-**Features*
+**Features**
 
 - Fully featured language, very similar to the already familiar bash.
 
