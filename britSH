@@ -1,0 +1,35 @@
+#!\bin\bash
+
+REQUEST=$(head -n 1 $1)
+#echo "Request is $REQUEST"
+
+if [[ $REQUEST =~ [Pp]lease ]]; then
+        #echo "Request accepted."
+        :
+else
+        echo "Refused: insufficient politeness. *Please* ask nicely. Thank you."
+        exit -1
+fi
+
+ACKNOWLEDGEMENT=$(tail -n 1 $1)
+echo "Acknowledgement is $ACKNOWLEDGEMENT"
+
+if [[ $ACKNOWLEDGEMENT =~ [Tt]hank[[:space:]][Yy]ou ]]; then
+        #echo "Acknowledgement accepted."
+        :
+else
+        echo "Refused: insufficient gratitude. Please try again. *Thank you*."
+        exit -2
+fi
+
+# Use PID to prevent clashes if multiple shells run this at once.
+INTERPRETED_FILE="/tmp/britSH_interpreted_$$.sh"
+
+#Run find-and-replaces
+sed 's/£/$/g ; s/our/or/g ; s/ise/ize/g' $1 > $INTERPRETED_FILE
+
+#Run the new script.
+#echo "bash $INTERPRETED_FILE ${@:2:99}"
+bash $INTERPRETED_FILE "${@:2:99}"
+
+exit $?
